@@ -11,7 +11,7 @@ module.exports = {
     entry: path.join(__dirname,'./src/index_test.js'),//读取该目录下文件作为入口
     output: {
         path: path.join(__dirname,'./dist'),//在该地址下生成一个js文件
-        filename: 'bundle.js'
+        filename: 'js/bundle.js'
     },
     devServer: {
         open: true,//运行后自动打开网页
