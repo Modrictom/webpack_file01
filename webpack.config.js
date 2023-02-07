@@ -6,6 +6,8 @@ const htmlPlugin = new HtmlPlugin({
     filename: './index.html'//指定生成的文件的存放路径
 })
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 module.exports = {
     mode: 'development',
     entry: path.join(__dirname,'./src/index_test.js'),//读取该目录下文件作为入口
@@ -19,12 +21,13 @@ module.exports = {
         port: 8080,//端口
         // static: './'
     },
-    plugins: [htmlPlugin],
+    plugins: [htmlPlugin,new CleanWebpackPlugin()],
     module: {
         rules: [
             {test: /\.css$/,use: ['style-loader','css-loader']},
             {test: /\.less$/,use: ['style-loader','css-loader','less-loader']},
-            {test: /\.jpg|png|gif$/,use: 'url-loader'}
+            {test: /\.js$/,use: 'babel-loader',exclude: /node_modules/},
+            {test: /\.jpg|png|gif$/,use: 'url-loader?limit=228&outputPath=images'}
         ]
     }
 

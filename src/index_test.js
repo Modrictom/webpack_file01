@@ -14,3 +14,12 @@ $(function(){
     $('li:odd').css('background-color','red')
     $('li:even').css('background-color','black')
 })
+
+function info(target) {
+    target.info = 'Person info'
+}
+
+@info 
+class Person {}
+
+console.log(Person.info)
