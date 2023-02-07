@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "webpack serve"
+    "test": "webpack serve",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
